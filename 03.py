@@ -328,6 +328,13 @@ SLOPE = [
     '.........#...###.#...#........#',
 ]
 
+HEIGHT = len(SLOPE)
+
+# Assumes:
+#   1) There is at least one row.
+#   2) All rows are the same length.
+WIDTH = len(SLOPE[0])
+
 TRAJECTORIES = [
     {'right': 1, 'down': 1},
     {'right': 3, 'down': 1},
@@ -339,9 +346,9 @@ TRAJECTORIES = [
 
 def tree_count(right, down):
     count, column = 0, 0
-    for row in range(0, height, down):
+    for row in range(0, HEIGHT, down):
         # Use a column wrap.
-        if SLOPE[row][column % width] == '#':
+        if SLOPE[row][column % WIDTH] == '#':
             count += 1
         # Advance the column.
         column += right
@@ -349,12 +356,6 @@ def tree_count(right, down):
 
 
 if __name__ == '__main__':
-
-    height = len(SLOPE)
-    # Assumes:
-    #   1) There is at least one row.
-    #   2) All rows are the same length.
-    width = len(SLOPE[0])
 
     # Part 1:
     print(f'Part 1: {tree_count(right=3, down=1)}')
