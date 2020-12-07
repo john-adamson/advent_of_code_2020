@@ -2,24 +2,6 @@
 Advent of Code 2020: Day 06.
 """
 
-from collections import defaultdict
-
-TEST_FORMS = """abc
-
-a
-b
-c
-
-ab
-ac
-
-a
-a
-a
-a
-
-b"""
-
 
 FORMS = """zvxc
 dv
